@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    align-items: center; 
+    border-top: 2px solid bisque;
+}
+  
+.buttons{
+    display: flex;
+    font-size: large;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
+  
+.buttons li {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+  
+.buttons li a:hover{
+    color: #01756f;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    align-items: center;  
+}
