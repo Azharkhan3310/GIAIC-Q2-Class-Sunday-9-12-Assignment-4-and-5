@@ -19,7 +19,6 @@
   font-weight: 750;
   justify-content: center;
   align-items: center;
-  
 }
 
 .blogs_card_container{
@@ -49,16 +48,10 @@
 
 
 .blog_card_title{
-  
   font-size: x-large;
   font-weight: 500;
   margin-top: 10px;
   margin-bottom: 15px;
-  
-}
-
-.blog_card_description{
-
 }
 
 .readMore{
@@ -71,7 +64,6 @@
   border-radius: 20px;
   margin-top: 20px;
   transition: background-color 0.3s ease;
-  
 }
 
 .readMore:hover{
@@ -101,9 +93,6 @@
   background-color: #ffe4c4;
 }
 
-.blog_content{
-
-}
 
 .blog_title{
   display: flex;
@@ -113,10 +102,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.blog_image {
-  
 }
 
 .blog_body{
