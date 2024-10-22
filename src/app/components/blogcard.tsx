@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import quantam_computing from "@/app/images/quantam_computer.webp";
 import five_g from "@/app/images/five_G.webp";
 import ar_vr from "@/app/images/ar_vr.webp";
@@ -7,7 +8,7 @@ import blockchain from "@/app/images/blockchain.webp";
 import { StaticImageData } from "next/image";
 
 
-interface BlogCardDataType {
+interface BlogDataType {
     image: StaticImageData;
     title: string;
     id: string;
@@ -15,7 +16,7 @@ interface BlogCardDataType {
     body: string;
 };
 
-const BlogCardData: BlogCardDataType[] = [
+const BlogData: BlogDataType[] = [
     {
         image: quantam_computing,
         title: "Quantum Computing: Impacts on Society",
@@ -60,4 +61,48 @@ const BlogCardData: BlogCardDataType[] = [
     },
 ];
 
-export default BlogCardData;
+
+
+export function BlogCard() {
+    return (
+      <div className="parent_container">
+        <div className='title text-4xl md:text-5xl lg:text-6xl text-center'>
+          Latest insights in Emerging Technologies
+        </div>
+        <div className='blogs_card_container fade-in-top' >
+          {BlogData.map((card) => (
+            <div className="blog_card" >
+              <Image className="blog_card_image" src={card.image} alt={card.title} />
+              <h1 className='blog_card_title'>{card.title}</h1>
+              <p className='blog_card_description'>{card.description}</p>
+              <a href={`/${card.id}`}><button className='readMore tracking-in-expand'>Read More</button></a>
+            </div>))}
+        </div>
+      </div>
+    );
+  }
+  
+
+
+export function BlogContent(id:string) {
+
+    const blog = BlogData.find(card => card.id === id);
+
+    return (
+        <div className="blog_page fade-in">
+            {blog ? (
+                <div className="blog_content" key={blog.id}>
+                    <h1 className='blog_title text-4xl md:text-5xl lg:text-6xl text-center'>{blog.title}</h1>
+                    <Image className="blog_image" src={blog.image} alt={blog.title} />
+                    <p className='blog_body'>{blog.body}</p>
+                </div>
+            ) : (
+                <div className='other_pages'>
+                    <div>
+                        Blog Not Found
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+}
