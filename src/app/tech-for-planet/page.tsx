@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { BlogContent } from '@/app/components/blogcard'; 
+import { BlogContent } from '@/app/components/blogdata'; 
 
 export default function BlogPage() {
     return BlogContent("tech-for-planet");
